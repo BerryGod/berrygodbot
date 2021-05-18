@@ -105,12 +105,7 @@ bot.on("message", async message => {
         message.channel.send("https://solo.to/berrygod");
     }
     
- client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'BerrYFrEERAnG');
  
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('838185605329715253').send(`Welcome <@${guildMember.user.id}> Köszöntünk a szerveren! Olvasd el a szabályokat!`)
-});
 
         
     
