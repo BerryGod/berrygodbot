@@ -101,8 +101,9 @@ bot.on("message", async message => {
         message.channel.send("testápoló");
     }
     
-
-
+  if (cmd === `${prefix}itemshop`) {
+        message.channel.send("https://fortnitetracker.com/shop");
+    }
 
 
 })
