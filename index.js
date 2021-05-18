@@ -101,8 +101,8 @@ bot.on("message", async message => {
         message.channel.send("testápoló");
     }
     
-  if (cmd === `${prefix}itemshop`) {
-        message.channel.send("https://fortnitetracker.com/shop");
+  if (cmd === `${prefix}promo`) {
+        message.channel.send("https://solo.to/berrygod");
     }
 
 
