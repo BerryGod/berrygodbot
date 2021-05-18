@@ -97,7 +97,10 @@ bot.on("message", async message => {
 
         }
     }
-
+    if (cmd === `${prefix}test`) {
+        message.channel.send("testápoló");
+    }
+    
 
 
 
