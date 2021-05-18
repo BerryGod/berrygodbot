@@ -55,7 +55,7 @@ bot.on("message", async message => {
     }
 
     if (cmd === `${prefix}help`) {
-        message.channel.send("Parancsok:-!Levi_okos, !Youtube, !David_jelszava, !David_buzi?, levi, help, !help");
+        message.channel.send("Parancsok:-!Levi_okos, !Youtube, !David_jelszava, !David_buzi?, levi, help, !help, !promo");
     }
     if (cmd === `Leviㅤlanc`) {
         message.channel.send("Leviㅤlanc");
