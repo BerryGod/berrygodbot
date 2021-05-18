@@ -104,15 +104,14 @@ bot.on("message", async message => {
   if (cmd === `${prefix}promo`) {
         message.channel.send("https://solo.to/berrygod");
     }
-    bot.on ("guildMemberAdd", (member) => {
-        const rulesChannel - member.guild.rulesChannelID;
-        const channelID = "838185605329715253"
-        
-        cosnt message = ' Belépett: <@${member.id}>! Olvasd el a szabályokat: ${member.guild.channels.cache.get(rulesChannel.toString()}'
-        
-        const channel = member.guld.channels.cache.get(channelID);
-        channel.send(message)
-    })
+    
+ client.on('guildMemberAdd', guildMember =>{
+    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'BerrYFrEERAnG');
+ 
+    guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('838185605329715253').send(`Welcome <@${guildMember.user.id}> Köszöntünk a szerveren! Olvasd el a szabályokat!`)
+});
+
         
     
     
