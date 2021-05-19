@@ -26,50 +26,108 @@ bot.on("message", async message => {
     let args = MessageArray.slice(1);
     let prefix = botconfig.prefix;
 
-    if (cmd === `${prefix}Levi_okos`) {
-        message.channel.send("Nem");
+   if(cmd === `${prefix}Levi_okos`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryGod")
+      .addField("Nem")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Levi okos?**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
 
-    if (cmd === `${prefix}Youtube`) {
-        message.channel.send("https://www.youtube.com/channel/UCk0EmNgBAdXGBCeTlDKFkwQ and https://www.youtube.com/channel/UCDkTQQVFBvekjx2WtYAyMhw");
-    }
-    if (cmd === `David_jelszava`) {
-        message.channel.send("Nem");
-    }
-
-
-    if (cmd === `${prefix}Dávid_buzi?`) {
-        message.channel.send("Nem de viszont levi az");
-    }
-
-    if (cmd === `levi`) {
-        message.channel.send("O.Levi hülye");
+  
+  if(cmd === `${prefix}david_jelszava`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField("komolyan elhitted ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Hülye vagy**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
 
-    if (cmd === `help`) {
-        message.channel.send("O.Levi hülye");
+
+   if(cmd === `${prefix}David_buzi`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField(Nem de levi az ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Nem**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
 
-    if (cmd === `David_jelszava`) {
-        message.channel.send("Nem");
+    if(cmd === `levi`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField("Levi hülye ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Tipp**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
 
-    if (cmd === `${prefix}help`) {
-        message.channel.send("Parancsok:-!Levi_okos, !Youtube, !David_jelszava, !David_buzi?, levi, help, !help, !promo");
+   
+
+    
+
+    if(cmd === `${prefix}help`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField("komolyan elhitted ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Help**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
+    
     if (cmd === `Leviㅤlanc`) {
         message.channel.send("Leviㅤlanc");
     }
 
     
     
-    }
-    if (cmd === `${prefix}test`) {
-        message.channel.send("testápoló");
+    
+    if(cmd === `${prefix}test`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField("testápoló ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Test**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
     
-  if (cmd === `${prefix}promo`) {
-        message.channel.send("https://solo.to/berrygod");
+   if(cmd === `${prefix}promo`){
+      let TesztEmbed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username)
+      .setTitle("BerryBot")
+      .addField("https://solo.to/berrygod ")
+      .setThumbnail(message.author.displayAvatarURL())
+      .setImage(message.guild.iconURL())
+      .setDescription("'''*Promo**'''")
+      .setFooter(`${botname} | ${message.createdAt}`)
+      message.channel.send(TesztEmbed)
     }
     
      if (cmd === `${prefix}cigi`) {
