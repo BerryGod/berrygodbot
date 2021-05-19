@@ -59,7 +59,7 @@ bot.on("message", async message => {
       .setColor("RANDOM")
       .setAuthor(message.author.username)
       .setTitle("BerryBot")
-      .addField(Nem de levi az ")
+      .addField("Nem de levi az")
       .setThumbnail(message.author.displayAvatarURL())
       .setImage(message.guild.iconURL())
       .setDescription("'''*Nem**'''")
