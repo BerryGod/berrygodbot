@@ -105,6 +105,35 @@ bot.on("message", async message => {
         message.channel.send("https://solo.to/berrygod");
     }
     
+     if (cmd === `${prefix}cigi`) {
+        message.channel.send(`${message.author.username} cigi szünetet tart!`).then(async msg => {
+            setTimeout(() => {
+                msg.edit('🚬');
+            }, 1500);
+            setTimeout(() => {
+                msg.edit('🚬 ☁ ');
+            }, 1500);
+            setTimeout(() => {
+                msg.edit('🚬 ☁☁ ');
+            }, 2000);
+            setTimeout(() => {
+                msg.edit('🚬 ☁☁☁ ');
+            }, 2500);
+            setTimeout(() => {
+                msg.edit('🚬 ☁☁');
+            }, 3000);
+            setTimeout(() => {
+                msg.edit('🚬 ☁');
+            }, 3500);
+            setTimeout(() => {
+                msg.edit('🚬 ');
+            }, 4000);
+            setTimeout(() => {
+                msg.edit(`${message.author.username} A cigi finom `);
+            }, 4500);
+        });
+    }
+    
  
 
         
