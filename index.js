@@ -61,41 +61,136 @@ bot.on("message", async message => {
         message.channel.send("Leviㅤlanc");
     }
 
-    if (cmd === `${prefix}bkick`) {
-        let kick_user = message.mentions.members.first();
-        if (args[0] && kick_user) {
+    if(cmd === `${prefix}ban`) {
+        if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+        if (message.member.hasPermission("KICK_MEMBERS")) {
+        let kickPerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if (kickPerson) {
+        if (!kickPerson.hasPermission("KICK_MEMBERS")) {
+        let bicon = bot.user.displayAvatarURL;
+    
+        let kickEmbed = new Discord.RichEmbed()
+        .setTitle("-->>Ban<<--")
+        .setDescription("Ban üzenet:")
+        .setColor("#ff0000")
+        .setThumbnail(bicon)
+        .addField(`${kickPerson.user.username} bannolva lett!`, "ˇˇˇˇ")
+        .addField("Kiosztotta:", `${message.member} ezt az embert: ${kickPerson.user.username}`)
+        .setTimestamp(message.createdAt)
+        .setFooter(`${name}`);
+    
+        message.guild.member(kickPerson.id).ban();
+        message.channel.send(kickEmbed);
+        console.log(`${message.author.id} bannolta: ${kickPerson}!`);
+    
+        } else message.channel.send(`A szerver adminjait nem tudod bannolni!`);
+    
+        } else message.channel.send(`Kérlek adj meg egy nevet! (pl: @cenzxd)`);
+    
+        } else message.channel.send(`Neked nincs jogod hogy bannolj!`);
+    } else message.channel.send(`Hiányzik: administrator jog.`)
+    
+    if(cmd === `${prefix}kick`) {
+        if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+        if (message.member.hasPermission("KICK_MEMBERS")) {
+        let kickPerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if (kickPerson) {
+        if (!kickPerson.hasPermission("KICK_MEMBERS")) {
+        let bicon = bot.user.displayAvatarURL;
+    
+        let kickEmbed = new Discord.RichEmbed()
+        .setTitle("-Kick-")
+        .setDescription("Kick üzenet:")
+        .setColor("#ff0000")
+        .setThumbnail(bicon)
+        .addField(`${kickPerson.user.username} kickelve lett!`, "ˇˇˇˇ")
+        .addField("Kiosztotta:", `${message.member} ezt az embert: ${kickPerson.user.username}`)
+        .setTimestamp(message.createdAt)
+        .setFooter(`${name}`);
+    
+        message.guild.member(kickPerson.id).kick();
+        message.channel.send(kickEmbed);
+        console.log(`${message.author.id} kickelte ${kickPerson}!`);
+    
+        } else message.channel.send(`A szerver adminjait nem tudod kickelni!`);
+    
+        } else message.channel.send(`Kérlek adj meg egy nevet! (pl: !  SubToBerryGod#2074 csak nem admint)`);
+    
+        } else message.channel.send(`Neked nincs jogod hogy kickelj!`);
+    } else message.channel.send(`Hiányzik: administrator jog.`)
+    
+    }
+    
+        
+    }
 
-            if (args[1]) {
+     if (cmd === `${prefix}mute`) {
+        if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+        let muterang = message.guild.roles.find(`name`, `muteolva`);
+        let mute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(message.member.hasPermission("KICK_MEMBERS")) {
+        if(mute) {
+        if(!mute.hasPermission("KICK_MEMBERS")) {
+        if(!mute.roles.has(muterang.id)) {
+    
+        message.channel.send(`<@${mute.id}> -nak/nek a nyelvére csomó lett kötve!`)
+    
+        mute.addRole(muterang.id);
+    
+        } else message.channel.send(`Ez az ember már némítva van!`)
+        } else message.channel.send(`A szerver adminjait nem tudod némítani!`);
+        } else message.channel.send(`Kérlek írj be egy nevet. (pl: @nemcenz)`);
+        } else message.channel.send(`Nincs jogod hogy némíts!`);
+    } else message.channel.send(`Hiányzik: administrator jog.`)
+    }
 
-                let KickEmbed = new Discord.MessageEmbed()
-                    .setTitle("KICK")
-                    .setColor("RED")
-                    .setDescription(`**Kickelte:** ${message.author.tag}\n**Kickelve lett:** ${kick_user.user.tag}\n**Kick indoka:** ${args.slice(1).join(" ")}`)
+    let nemitottrang = message.guild.roles.find(`name`, `muteolva`);
+if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+if(message.member.hasPermission("KICK_MEMBERS")) {
 
-                message.channel.send(KickEmbed);
+} else if(message.member.roles.has(nemitottrang.id)) {
+    message.delete();
+}
+}
 
-                kick_user.kick(args.slice(1).join(" "));
+if (cmd === `${prefix}unmute`) {
+    if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+    let muterang = message.guild.roles.find(`name`, `muteolva`);
+    let mute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(message.member.hasPermission("KICK_MEMBERS")) {
+    if(mute) {
+    if(mute.roles.has(muterang.id)) {
 
-            } else {
-                let parancsEmbed = new Discord.MessageEmbed()
-                    .setTitle("Parancs használata:")
-                    .addField(`\`${prefix}kick <@név> [indok]\``, "˘˘˘")
-                    .setColor("BLUE")
-                    .setDescription("HIBA: Kérlek adj meg egy indokot!!")
+    message.channel.send(`${emoji.done} <@${mute.id}> -nak/nek kicsomózták a nyelvét!`)
 
-                message.channel.send(parancsEmbed);
-            }
+    mute.removeRole(muterang.id);
 
-        } else {
-            let parancsEmbed = new Discord.MessageEmbed()
-                .setTitle("Parancs használata:")
-                .addField(`\`${prefix}kick <@név> [indok]\``, "˘˘˘")
-                .setColor("BLUE")
-                .setDescription("HIBA: Kérlek említs meg egy embert!")
+    } else message.channel.send(`Ez az ember nincs némítva!`)
+    } else message.channel.send(`Kérlek írj be egy nevet. (pl: @cenzike)`);
+    } else message.channel.send(`Nincs jogod hogy felnémíts!`);
+} else message.channel.send(`Hiányzik: administrator jog.`)
+}
 
-            message.channel.send(parancsEmbed);
+    if (cmd === `${prefix}unmute`) {
+    if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) {
+    let muterang = message.guild.roles.find(`name`, `muteolva`);
+    let mute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(message.member.hasPermission("KICK_MEMBERS")) {
+    if(mute) {
+    if(mute.roles.has(muterang.id)) {
 
-        }
+    message.channel.send(`${emoji.done} <@${mute.id}> -nak/nek kicsomózták a nyelvét!`)
+
+    mute.removeRole(muterang.id);
+
+    } else message.channel.send(`Ez az ember nincs némítva!`)
+    } else message.channel.send(`Kérlek írj be egy nevet. (pl: @cenzike)`);
+    } else message.channel.send(`Nincs jogod hogy felnémíts!`);
+} else message.channel.send(`Hiányzik: administrator jog.`)
+}
+
+
+    
     }
     if (cmd === `${prefix}test`) {
         message.channel.send("testápoló");
