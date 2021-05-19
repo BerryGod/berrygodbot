@@ -99,14 +99,9 @@ bot.on("message", async message => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
             }, 4500);
         });
-    }
-    
- 
-
-        
+    } 
     
     
-
 
 })
 
