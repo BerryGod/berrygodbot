@@ -76,10 +76,10 @@ bot.on("message", async message => {
         message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(async msg => {
             setTimeout(() => {
                 msg.edit('Köszi!');
-            }, 1500);
+            }, 3000);
             setTimeout(() => {
                 msg.edit('🚬');
-            }, 1500);
+            }, 2000);
             setTimeout(() => {
                 msg.edit('🚬 ☁ ');
             }, 1500);
@@ -94,10 +94,10 @@ bot.on("message", async message => {
             }, 3000);
             setTimeout(() => {
                 msg.edit('🚬 ☁');
-            }, 3500);
+            }, 3000);
             setTimeout(() => {
                 msg.edit('🚬 ');
-            }, 4000);
+            }, 3000);
             setTimeout(() => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
             }, 4500);
