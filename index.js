@@ -73,7 +73,10 @@ bot.on("message", async message => {
     }
     
      if (cmd === `${prefix}cigi`) {
-        message.channel.send(`${message.author.username} cigi szünetet tart!`).then(async msg => {
+        message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(async msg => {
+            setTimeout(() => {
+                msg.edit('Köszi!');
+            }, 1500);
             setTimeout(() => {
                 msg.edit('🚬');
             }, 1500);
