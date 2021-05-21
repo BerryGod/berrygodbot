@@ -16,7 +16,7 @@ bot.on("ready", async() => {
     setInterval(function() {
         let status = státuszok[Math.floor(Math.random() * státuszok.length)]
 
-        bot.user.setActivity(status, { type: "STREAMING" })
+        bot.user.setActivity(status, { type: "PLAYING" })
     }, 3000)
 })
 
@@ -98,9 +98,6 @@ bot.on("message", async message => {
             setTimeout(() => {
                 msg.edit('🚬 ');
             }, 5000);
-            setTimeout(() => {
-                msg.edit('Secret ');
-            }, 5000000000000000);
             setTimeout(() => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
             }, 5500);
