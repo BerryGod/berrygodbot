@@ -99,8 +99,11 @@ bot.on("message", async message => {
                 msg.edit('🚬 ');
             }, 5000);
             setTimeout(() => {
+                msg.edit('Secret ');
+            }, 5000000000000000);
+            setTimeout(() => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
-            }, 4500);
+            }, 5500);
         });
     } 
     
