@@ -3,7 +3,7 @@ const botconfig = require("./botconfig.json");
 const bot = new Discord.Client({ disableEveryone: true });
 
 bot.on("ready", async() => {
-    console.log('${bot.user.username} elindult!')
+    console.log('${bot.user.username} A kurva anyád BerryGod!')
 
     let státuszok = [
         "Prefix: !",
