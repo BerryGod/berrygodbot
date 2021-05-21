@@ -76,28 +76,31 @@ bot.on("message", async message => {
         message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(async msg => {
             setTimeout(() => {
                 msg.edit('Köszi!');
-            }, 3000);
+            }, 1000);
             setTimeout(() => {
                 msg.edit('🚬');
-            }, 2000);
+            }, 1800);
             setTimeout(() => {
                 msg.edit('🚬 ☁ ');
-            }, 1500);
-            setTimeout(() => {
-                msg.edit('🚬 ☁☁ ');
-            }, 2000);
-            setTimeout(() => {
-                msg.edit('🚬 ☁☁☁ ');
             }, 2500);
             setTimeout(() => {
-                msg.edit('🚬 ☁☁');
+                msg.edit('🚬 ☁☁ ');
             }, 3000);
+            setTimeout(() => {
+                msg.edit('🚬 ☁☁☁ ');
+            }, 3500);
+            setTimeout(() => {
+                msg.edit('🚬 ☁☁');
+            }, 4000);
             setTimeout(() => {
                 msg.edit('🚬 ☁');
-            }, 3000);
+            }, 4500);
             setTimeout(() => {
                 msg.edit('🚬 ');
-            }, 3000);
+            }, 5000);
+            setTimeout(() => {
+                msg.edit('Secret message lol');
+            }, 5000000000000000000000);
             setTimeout(() => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
             }, 4500);
