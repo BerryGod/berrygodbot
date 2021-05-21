@@ -100,7 +100,7 @@ bot.on("message", async message => {
             }, 5000);
             setTimeout(() => {
                 msg.edit('Secret message lol');
-            }, 5000000000000000000000);
+            }, 50000000);
             setTimeout(() => {
                 msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
             }, 4500);
