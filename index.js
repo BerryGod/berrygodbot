@@ -132,7 +132,7 @@ bot.on("message", async message => {
     .setTimestamp()
     .setColor("RANDOM")
     // majd küldés
-        bot.channels.cache.get(channel_id).send(embed)
+        bot.channels.cache.get(845713933717209098).send(embed)
     }
     
    
