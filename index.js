@@ -104,6 +104,37 @@ bot.on("message", async message => {
         });
     } 
     
+    if(cmd ==="report"){
+        // privát szűrése
+    if(message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
+    // felhasználó lekérése
+    const report_usr = message.mentions.users.first();
+    // csatorna id az egyszerűség kedvéért
+    const channel_id = "833788020074479687";
+    // 6 + 24 mivel prefix levágva = 30
+    const indok = message.content.slice(30);
+ 
+    // ha nincs felhasználó
+    if(!report_usr){
+        return message.reply('Nem adtad meg a felhasználót!');
+    }
+    
+    // ha nincs indok
+    if(!indok){
+        return message.reply("Nem adtál meg indokot!");
+    }
+ 
+    //embed
+    const embed = new Discord.MessageEmbed()
+    .setTitle('Report')
+    .setDescription(`*${report_usr} jelentve lett!*\n **Indoka: ${indok}**\n *Bejelentő: ${message.author.username}*\n Szerverren?: ${message.guild.name}`)
+    .setFooter(bot.user.username, bot.user.displayAvatarURL())
+    .setTimestamp()
+    .setColor("RANDOM")
+    // majd küldés
+        bot.channels.cache.get(channel_id).send(embed)
+    }
+    
    
     
     
