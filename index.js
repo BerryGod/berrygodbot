@@ -135,36 +135,25 @@ bot.on("message", async message => {
         bot.channels.cache.get(channel_id).send(embed)
      
      }
-    if(cmd === `${prefix}cat`){
-        let msg = await message.channel.send("*Macska betöltése...*")
-
-        let {body} = await superagent = 1
-        .get(`https://aws.random.cat/meow`)
-
-        if(!{body}) return message.channel.send("A file betöltésekor hiba lépett fel!")
-
-        let catEmbed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .addField("Ugy milyen cuki?", ":3")
-        .setImage(body.file)
-        .setTimestamp(message.createdAt)
-        .setFooter(botname)
-
-        message.channel.send(catEmbed)
-    }
-
-    if(cmd === `${prefix}meme`){
-        const subreddits = ["dankmeme", "meme", "me_irl"]
-        const random = subreddits[Math.floor(Math.random() * subreddits.length)]
-
-        const IMG = await randomPuppy(random)
-        const MemeEmbed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .setImage(IMG)
-        .setTitle(`Keresési szöveg: ${random} (KATT IDE!)`)
-        .setURL(`https://www.reddit.com/r/${random}`)
-
-        message.channel.send(MemeEmbed)
+  
+    if (message.content === "!meme") {
+        const embed = new Discord.MessageEmbed()
+        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+            let content = JSON.parse(response.body);
+            let permalink = content[0].data.children[0].data.permalink;
+            let memeUrl = `https://reddit.com${permalink}`;
+            let memeImage = content[0].data.children[0].data.url;
+            let memeTitle = content[0].data.children[0].data.title;
+            let memeUpvotes = content[0].data.children[0].data.ups;
+            let memeDownvotes = content[0].data.children[0].data.downs;
+            let memeNumComments = content[0].data.children[0].data.num_comments;
+            embed.setTitle(`${memeTitle}`)
+            embed.setURL(`${memeUrl}`)
+            embed.setImage(memeImage)
+            embed.setColor('RANDOM')
+            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+            message.channel.send(embed);
+        })
     }
     
     
