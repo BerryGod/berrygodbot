@@ -135,6 +135,26 @@ bot.on("message", async message => {
         bot.channels.cache.get(channel_id).send(embed)
      
      }
+    if(cmd === '${prefix´}createrole)(
+       if(messsage.guild.member(bot.user).hasPermission("ADMINISTRATOR")){
+        if(message.member.hasPermission("ADMINISTRATOR")){
+            if(args[0])}
+            message.guild.roles.create({
+                data: {
+                    "name": args[0],
+                    "Color": "RED"
+                }
+            }).then(message.reply{'$message.author.tag} létrehozta
+                    
+                
+            }
+        })
+            
+        } else message.reply('Használat: ${prefix}createrole <Rang neve>')
+            
+            
+        }else message.reply("ehez nincs jogod! Kérd BerryGodot hogy hozza neked létre")
+    } else message.reply("A botnak nincs ehez joga")
     
     
     
