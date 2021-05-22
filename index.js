@@ -138,7 +138,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}cat`){
         let msg = await message.channel.send("*Macska betöltése...*")
 
-        let {body} = await superagent
+        let {body} = await superagent = 1
         .get(`https://aws.random.cat/meow`)
 
         if(!{body}) return message.channel.send("A file betöltésekor hiba lépett fel!")
