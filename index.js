@@ -73,7 +73,7 @@ bot.on("message", async message => {
     }
     
      if (cmd === `${prefix}cigi`) {
-        message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(async msg => {
+        message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(asyncmsg => {
             setTimeout(() => {
                 msg.edit('Köszi!');
             }, 1000);
@@ -104,13 +104,13 @@ bot.on("message", async message => {
         });
     } 
     
-    if(cmd ==="report"){
+     if(cmd ==="report"){
         // privát szűrése
     if(message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
     // felhasználó lekérése
     const report_usr = message.mentions.users.first();
-    // csatorna id az egyszerűség kedvéért
-    const channel_id = "833788020074479687";
+    // csatorna id az 8020egyszerűség kedvéért
+    const channel_id = "845714554779729931";
     // 6 + 24 mivel prefix levágva = 30
     const indok = message.content.slice(30);
  
@@ -132,8 +132,9 @@ bot.on("message", async message => {
     .setTimestamp()
     .setColor("RANDOM")
     // majd küldés
-        bot.channels.cache.get(845713933717209098).send(embed)
-    }
+        bot.channels.cache.get(channel_id).send(embed)
+     
+     }
     
    
     
