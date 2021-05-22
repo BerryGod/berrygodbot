@@ -104,7 +104,7 @@ bot.on("message", async message => {
         });
     } 
     
-    if(cmd ==="report"){
+    if(cmd ==="${prefix}breport"){
         // privát szűrése
     if(message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
     // felhasználó lekérése
