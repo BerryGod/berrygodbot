@@ -136,9 +136,7 @@ bot.on("message", async message => {
      
      }
     
-    if (cmd === `spam`) {
-        message.channel.send("spam");
-    }
+    
     
     
    
