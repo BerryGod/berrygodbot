@@ -136,39 +136,7 @@ bot.on("message", async message => {
      
      }
   
- if(cmd === `${prefix}bcat`){
-        let msg = await message.channel.send("*Macska betöltése...*")
-
-        let {body} = await superagent
-        .get(`https://aws.random.cat/meow`)
-
-        if(!{body}) return message.channel.send("A file betöltésekor hiba lépett fel!")
-
-        let catEmbed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .addField("Ugy milyen cuki?", ":3")
-        .setImage(body.file)
-        .setTimestamp(message.createdAt)
-        .setFooter(botname)
-
-        message.channel.send(catEmbed)
-    }
-
-    if(cmd === `${prefix}bmeme`)
-        const subreddits = ["dankmeme", "meme", "me_irl"]
-        const random = subreddits[Math.floor(Math.random() * subreddits.length)]
-
-        const IMG = await randomPuppy(random)
-        const MemeEmbed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .setImage(IMG)
-        .setTitle(`Keresési szöveg: ${random} (KATT IDE!)`)
-        .setURL(`https://www.reddit.com/r/${random}`)
-
-        message.channel.send(MemeEmbed)
-    }
-    
-    
+ 
     
    
     
