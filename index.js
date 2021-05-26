@@ -136,26 +136,37 @@ bot.on("message", async message => {
      
      }
   
- const { RichEmbed } = require("discord.js");
-const randomPuppy = require("random-puppy");
+ f(cmd === `${prefix}bcat`){
+        let msg = await message.channel.send("*Macska betöltése...*")
 
-module.exports = {
-    name: "meme",
-    category: "fun",
-    description: "Sends an epic meme",
-    run: async (client, message, args) => {
-        const subReddits = ["dankmeme", "meme", "me_irl"];
-        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+        let {body} = await superagent
+        .get(`https://aws.random.cat/meow`)
 
-        const image = await randomPuppy(random);
-        const embed = new RichEmbed()
-            .setColor("RANDOM")
-            .setImage(image);
+        if(!{body}) return message.channel.send("A file betöltésekor hiba lépett fel!")
 
-        message.channel.send(embed);
+        let catEmbed = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .addField("Ugy milyen cuki?", ":3")
+        .setImage(body.file)
+        .setTimestamp(message.createdAt)
+        .setFooter(botname)
+
+        message.channel.send(catEmbed)
     }
-}}
-    
+
+    if(cmd === `${prefix}bmeme`){
+        const subreddits = ["dankmeme", "meme", "me_irl"]
+        const random = subreddits[Math.floor(Math.random() * subreddits.length)]
+
+        const IMG = await randomPuppy(random)
+        const MemeEmbed = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setImage(IMG)
+        .setTitle(`Keresési szöveg: ${random} (KATT IDE!)`)
+        .setURL(`https://www.reddit.com/r/${random}`)
+
+        message.channel.send(MemeEmbed)
+    }
     
     
     
