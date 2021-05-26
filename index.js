@@ -154,7 +154,7 @@ bot.on("message", async message => {
         message.channel.send(catEmbed)
     }
 
-    if(cmd === `${prefix}bmeme`){
+    if(cmd === `${prefix}bmeme`)
         const subreddits = ["dankmeme", "meme", "me_irl"]
         const random = subreddits[Math.floor(Math.random() * subreddits.length)]
 
