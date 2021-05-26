@@ -136,7 +136,7 @@ bot.on("message", async message => {
      
      }
   
- f(cmd === `${prefix}bcat`){
+ if(cmd === `${prefix}bcat`){
         let msg = await message.channel.send("*Macska betöltése...*")
 
         let {body} = await superagent
