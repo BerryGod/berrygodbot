@@ -136,25 +136,25 @@ bot.on("message", async message => {
      
      }
   
-    if (message.content === "!meme") {
-        const embed = new Discord.MessageEmbed()
-        got('https://www.reddit.com/r/memes/random/.json').then(response => {
-            let content = JSON.parse(response.body);
-            let permalink = content[0].data.children[0].data.permalink;
-            let memeUrl = `https://reddit.com${permalink}`;
-            let memeImage = content[0].data.children[0].data.url;
-            let memeTitle = content[0].data.children[0].data.title;
-            let memeUpvotes = content[0].data.children[0].data.ups;
-            let memeDownvotes = content[0].data.children[0].data.downs;
-            let memeNumComments = content[0].data.children[0].data.num_comments;
-            embed.setTitle(`${memeTitle}`)
-            embed.setURL(`${memeUrl}`)
-            embed.setImage(memeImage)
-            embed.setColor('RANDOM')
-            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            message.channel.send(embed);
-        })
+ const { RichEmbed } = require("discord.js");
+const randomPuppy = require("random-puppy");
+
+module.exports = {
+    name: "meme",
+    category: "fun",
+    description: "Sends an epic meme",
+    run: async (client, message, args) => {
+        const subReddits = ["dankmeme", "meme", "me_irl"];
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+
+        const image = await randomPuppy(random);
+        const embed = new RichEmbed()
+            .setColor("RANDOM")
+            .setImage(image);
+
+        message.channel.send(embed);
     }
+}}
     
     
     
