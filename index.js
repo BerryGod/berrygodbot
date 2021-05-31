@@ -123,6 +123,7 @@ bot.on("message", async message => {
         bot.channels.cache.get(channel_id).send(embed)
      
      }
+    
     if(cmd === `${prefix}ban`){
     message.delete()
 
