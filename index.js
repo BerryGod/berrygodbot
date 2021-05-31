@@ -33,15 +33,9 @@ bot.on("message", async message => {
     if (cmd === `${prefix}Youtube`) {
         message.channel.send("https://www.youtube.com/channel/UCk0EmNgBAdXGBCeTlDKFkwQ and https://www.youtube.com/channel/UCDkTQQVFBvekjx2WtYAyMhw");
     }
-    if (cmd === `David_jelszava`) {
-        message.channel.send("Nem");
-    }
+  
 
-
-    if (cmd === `${prefix}Dávid_buzi?`) {
-        message.channel.send("Nem de viszont levi az");
-    }
-
+  
     if (cmd === `levi`) {
         message.channel.send("O.Levi hülye");
     }
@@ -50,17 +44,11 @@ bot.on("message", async message => {
         message.channel.send("O.Levi hülye");
     }
 
-    if (cmd === `David_jelszava`) {
-        message.channel.send("Nem");
-    }
-
+   
     if (cmd === `${prefix}help`) {
         message.channel.send("Parancsok:-!Levi_okos, !Youtube, !David_jelszava, !David_buzi?, levi, help, !help, !promo");
     }
-    if (cmd === `Leviㅤlanc`) {
-        message.channel.send("Leviㅤlanc");
-    }
-
+  
     
     
     
