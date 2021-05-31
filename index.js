@@ -123,6 +123,45 @@ bot.on("message", async message => {
         bot.channels.cache.get(channel_id).send(embed)
      
      }
+    if(cmd === `${prefix}ban`){
+    message.delete()
+
+    if(!message.member.hasPermission(`BAN_MEMBERS`)) return message.reply(`Nincsen elegendő jogosultságod a parancs használatához!`);
+
+    let mention = message.mentions.members.first();
+    let indok = args.slice(1).join(" ");
+
+
+    if(!mention) {
+            let parancsEmbed = new Discord.MessageEmbed()
+            .setTitle("Parancs használata:")
+            .addField(`\`${prefix}ban <@név> [indok]\``, "˘˘˘")
+            .setColor("BLUE")
+            .setDescription("HIBA: Kérlek add meg a felhasználót!")
+      
+            message.channel.send(parancsEmbed);
+        }
+        if (!indok) {
+            let parancsEmbed = new Discord.MessageEmbed()
+            .setTitle("Parancs használata:")
+            .addField(`\`${prefix}bam <@név> [indok]\``, "˘˘˘")
+            .setColor("BLUE")
+            .setDescription("HIBA: Kérlek add meg az indokot!")
+      
+            message.channel.send(parancsEmbed);
+        } else {
+            let BanEmbed = new Discord.MessageEmbed()
+            .setTitle("BAN")
+            .setColor("RED")
+            .setDescription(`**Banolta:** ${message.author.tag}\n**Banolva lett:** ${ban_user.user.tag}\n**Ban indoka:** ${args.slice(1).join(" ")}`)
+  
+                message.channel.send(BanEmbed);
+
+                message.guild.members.ban(banMember, {reason: `${banreason}`})
+
+                mention.send(`Ki lettél tiltva a(z) **${message.guild.name}** szerverről **${message.author.tag}** által!\nIndokolás: **${banreason}**`)
+        }
+    }
   
  
     
