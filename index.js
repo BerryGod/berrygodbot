@@ -162,6 +162,7 @@ bot.on("message", async message => {
                 mention.send(`Ki lettél tiltva a(z) **${message.guild.name}** szerverről **${message.author.tag}** által!\nIndokolás: **${banreason}**`)
         }
     }
+    
   
  
     
