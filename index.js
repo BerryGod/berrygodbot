@@ -124,6 +124,41 @@ bot.on("message", async message => {
      
      }
     
+    const Discord = require("discord.js")
+const colors = require('../../colors.json')
+
+module.exports = {
+    name: 'gayrate',
+    description: 'Sends you your gay rate',
+    usage: 'gayrate [user]',
+    usage: 'gayrate',
+    category: 'Fun',
+    guildOnly: true,
+    async execute(message, args){
+        let User = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase().includes() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase().includes() === args.join(' ').toLocaleLowerCase())
+        let gayrate = Math.floor(Math.random() * 101)
+
+
+        if(!User){
+            let gayrateEmbed = new Discord.MessageEmbed()
+                .setTitle("🏳️‍🌈 Mennyire vagy buzi?")
+                .setColor("RANDOM")
+                .setDescription("Te " + gayrate + "%ban buzi vagy ! 🏳️‍🌈")
+                .setFooter(message.client.user.username, message.client.user.avatarURL())
+            message.channel.send(gayrateEmbed).catch(e => {
+                console.log(e)
+            })
+        } else {
+            let argsEmbed = new Discord.MessageEmbed()
+                .setTitle("🏳️‍🌈 Mennyire vagy gay?")
+                .setColor("RANDOM")
+                .setDescription( ${User.user.username}  \`${gayrate}%\ buzi ! 🏳️‍🌈`)
+                .setFooter(message.client.user.username, message.client.user.avatarURL())
+            message.channel.send(argsEmbed).catch(e => {
+                console.log(e)
+            })
+        }
+    
     
     
   
