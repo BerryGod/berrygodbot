@@ -124,6 +124,35 @@ bot.on("message", async message => {
      
      }
     
+    
+    module.exports = (client) => {
+    const channelId = "850452582086475807";
+    const rulesChannel = "844285176154292225";
+    client.on('guildMemberAdd', async(member) => {
+      console.log(member);
+
+      const message = BerryGod/BerryHUN üdvözöl <@${member.id}>. Érezd jól magad és tartsd be a szabályokat ${member.guild.channels.cache .get(rulesChannel).toString()} a szabályokhoz ezt a szobát csekkold le!;
+
+      const channel = member.guild.channels.cache.get(channelId);
+      channel.send(message);
+    });
+  };
+
+
+LEAVE:
+
+  module.exports = (client) => {
+    const channelId = "850452582086475807";
+    client.on('guildMemberRemove', async(member) => {
+      console.log(member);
+
+      const message = Sajnos <@${member.id}> kilépett a szerverről, remélem még találkozunk👋!;
+
+      const channel = member.guild.channels.cache.get(channelId);
+      channel.send(message);
+    });
+  };
+    
 
     
     
