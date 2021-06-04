@@ -131,7 +131,7 @@ bot.on("message", async message => {
     client.on('guildMemberAdd', async(member) => {
       console.log(member);
 
-      const message = BerryGod/BerryHUN üdvözöl <@${member.id}>. Érezd jól magad és tartsd be a szabályokat ${member.guild.channels.cache .get(rulesChannel).toString()} a szabályokhoz ezt a szobát csekkold le!;
+      const message = BerryGod üdvözöl <@${member.id}>. Érezd jól magad és tartsd be a szabályokat ${member.guild.channels.cache .get(rulesChannel).toString()} a szabályokhoz ezt a szobát csekkold le!;
 
       const channel = member.guild.channels.cache.get(channelId);
       channel.send(message);
