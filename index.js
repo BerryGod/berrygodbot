@@ -126,7 +126,7 @@ bot.on("message", async message => {
     
     
     module.exports = (client) => {
-    const channelId = "850452582086475807";
+    const channelId = "838185605329715253";
     const rulesChannel = "844285176154292225";
     client.on('guildMemberAdd', async(member) => {
       console.log(member);
@@ -142,7 +142,7 @@ bot.on("message", async message => {
 LEAVE:
 
   module.exports = (client) => {
-    const channelId = "850452582086475807";
+    const channelId = "847171439051538472";
     client.on('guildMemberRemove', async(member) => {
       console.log(member);
 
