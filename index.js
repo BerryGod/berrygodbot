@@ -124,6 +124,10 @@ bot.on("message", async message => {
      
      }
     
+    if (command === "math") {
+  bot.commands.get('math').execute(message, args)
+}
+    
     
 
     
