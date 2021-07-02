@@ -182,25 +182,7 @@ bot.on("message", async message => {
     
 
     
-    if(cmd === `${prefix}Clear`){
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
-        if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")){
 
-            if(args[0] && isNaN(args[0]) && args [0] <=100 || 0 < args[0] && args[0] < 101){
-
-                message.channel.send(Törölve lett: ${Math.round(args[0])} üzenet!)
-                message.channel.bulkDelete(Math.round(args[0]))
-    
-            } else {
-                message.reply(Használat: ${prefix}Töröl <1-100>)
-            }
-        } else message.reply("A BurnyBOT-nak adminnaknak kell lennie a szervren, hogy működjön ez a parancs!")
-    
-    } else message.reply("Ehhez a parancshoz nincs jogod")
-}
-   
-
-    
     
   
  
