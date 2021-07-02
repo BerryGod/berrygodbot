@@ -180,7 +180,9 @@ bot.on("message", async message => {
     }
     
     
-
+   if(cmd == `${prefix}Ping`) {
+        message.channel.send(`BurnyBOT bot pingje a következő : **${bot.ws.ping}ms**`)
+    }
     
 
     
