@@ -40,13 +40,11 @@ bot.on("message", async message => {
         message.channel.send("O.Levi hülye");
     }
 
-    if (cmd === `help`) {
-        message.channel.send("O.Levi hülye");
-    }
+ 
 
    
     if (cmd === `${prefix}help`) {
-        message.channel.send("Parancsok:-!Levi_okos, !Youtube, !David_jelszava, !David_buzi?, levi, help, !help, !promo");
+        message.channel.send("https://pastebin.com/x44ySE3i");
     }
   
     
@@ -92,7 +90,7 @@ bot.on("message", async message => {
         });
     } 
     
-     if(cmd ==="report"){
+     if(cmd ===`${prefix}report`){
         // privát szűrése
     if(message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
     // felhasználó lekérése
