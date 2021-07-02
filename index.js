@@ -163,7 +163,7 @@ bot.on("message", async message => {
         .setColor('RANDOM')
         .setTitle('Server Info')
         .setThumbnail(`${icon}`)
-        .addField('Szerver Tulaj:-', @BerryGod)
+        .addField('Szerver Tulaj:-', guild.owner)
         .addField('Szerver ID:-', guild.id)
         .addField('Sezrver létrehozása:-', create)
         .addField('Boost számláló:-', guild.premiumSubscriptionCount)
