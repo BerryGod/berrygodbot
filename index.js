@@ -58,37 +58,7 @@ bot.on("message", async message => {
         message.channel.send("https://solo.to/berrygod");
     }
     
-     if (cmd === `${prefix}cigi`) {
-        message.channel.send(`${message.author.username} Adj egy szál cigit!`).then(asyncmsg => {
-            setTimeout(() => {
-                msg.edit('Köszi!');
-            }, 1000);
-            setTimeout(() => {
-                msg.edit('🚬');
-            }, 1800);
-            setTimeout(() => {
-                msg.edit('🚬 ☁ ');
-            }, 2500);
-            setTimeout(() => {
-                msg.edit('🚬 ☁☁ ');
-            }, 3000);
-            setTimeout(() => {
-                msg.edit('🚬 ☁☁☁ ');
-            }, 3500);
-            setTimeout(() => {
-                msg.edit('🚬 ☁☁');
-            }, 4000);
-            setTimeout(() => {
-                msg.edit('🚬 ☁');
-            }, 4500);
-            setTimeout(() => {
-                msg.edit('🚬 ');
-            }, 5000);
-            setTimeout(() => {
-                msg.edit(`${message.author.username} Hé figyu van még egy szál cigid `);
-            }, 5500);
-        });
-    } 
+
     
      if(cmd ===`${prefix}report`){
         // privát szűrése
