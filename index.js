@@ -176,7 +176,44 @@ bot.on("message", async message => {
 }
 
     
-   
+   if(cmd === `${prefix}Cica`) {
+    let msg = await message.channel.send("Generálás...") 
+
+ let {body} = await superagent
+ .get(`http://aws.random.cat/meow`)
+ //console.log(body.file) 
+ if(!{body}) return message.channel.send("Nem sikerült a kép legenerálása!")
+
+ let cEmbed = new Discord.MessageEmbed()
+ .setColor("#ff0000")
+ .setAuthor('Unrealy | Cica', message.guild.iconURL())
+ .setImage(body.file)
+ .setTimestamp()
+ .setFooter('Forrás: BurnyBOT')
+
+ message.channel.send(cEmbed)
+
+ msg.delete();
+}
+if(cmd === `${prefix}cica`) {
+    let msg = await message.channel.send("Generálás...") 
+
+ let {body} = await superagent
+ .get(`http://aws.random.cat/meow`)
+ //console.log(body.file) 
+ if(!{body}) return message.channel.send("Nem sikerült a kép legenerálása!")
+
+ let cEmbed = new Discord.MessageEmbed()
+ .setColor("#ff0000")
+ .setAuthor('Unrealy | Cica', message.guild.iconURL())
+ .setImage(body.file)
+ .setTimestamp()
+ .setFooter('Forrás: BurnyBOT')
+
+ message.channel.send(cEmbed)
+
+ msg.delete();
+}
     
     
 
