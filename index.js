@@ -174,29 +174,7 @@ bot.on("message", async message => {
       .setFooter(`Forrás: Athox`)
   message.channel.send(embed);
 }
-if(cmd === `${prefix}Kutya`) {
-    let msg = await message.channel.send('Generálás... ')
 
-var dog;
-
-dog = await superagent
-   .get("https://random.dog/woof.json");
-
-while (dog.body.url.endsWith(".webm") || dog.body.url.endsWith(".mp4")) {
-   dog = await superagent
-       .get("https://random.dog/woof.json");
-   console.log(dog.body)
-}
-msg.delete()
-var embed = new Discord.MessageEmbed()
-   .setColor("#ff0000")
-   .setTitle("Unrealy | Kutya")
-   .setImage(dog.body.url)
-   .setFooter(`Forrás: Athox`)
-message.channel.send(embed);
-}
-  
- 
     
    
     
