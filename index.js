@@ -168,7 +168,7 @@ message.member;
 
 //embedek
 
- const embed_kezdes = new Discord.MessageEmbed().setDescription('A hack előkészül!');
+ const embed_kezdes = new Discord.MessageEmbed().setDescription('A hack elkezdődik');
  consthacked = new Discord.MessageEmbed().setDescription('HACKED.')
  consthacked2 = new Discord.MessageEmbed().setDescription('HACKED..')
  consthacked3 = new Discord.MessageEmbed().setDescription('HACKED...')
@@ -182,13 +182,13 @@ const40 = new Discord.MessageEmbed().setDescription('HACKED.\n`Server connection
 const50 = new Discord.MessageEmbed().setDescription('HACKED..\n`Server connections: 100%`\n\nA hack állapota: 50%');
 constfeldolgozas = new Discord.MessageEmbed() .setTitle("HACKED...\n`Server connections: 100%`\n**FELDOLGOZÁS:**") .setDescription('`Feldolgozás állapota: 37%`');
 constfeldolgozas2 = new Discord.MessageEmbed() .setTitle("HACKED.\n`Server connections: 100%`\n**FELDOLGOZÁS:**") .setDescription('`Feldolgozás állapota: 74%`');
-constfeldolgozas3 = new Discord.MessageEmbed() .setTitle("HACKED..\n`Server connections: 100%`\n**FELDOLGOZÁS:**") .setDescription('`Feldolgozás állapota: 100%, kész!`');
+constfeldolgozas3 = new Discord.MessageEmbed() .setTitle("HACKED..\n`Registering to gay porn") .setDescription('`Regisztrálva`');
 constfeldolgozas4 = new Discord.MessageEmbed() .setTitle(`HACKED...\nServer connections: 100%\n**Member username: ${hack_usr}**`);
 const60 = new Discord.MessageEmbed().setDescription('HACKED.\n`Server connections: 100%`\n\nA hack állapota: 60%');
 const70 = new Discord.MessageEmbed().setDescription('HACKED..\n`Server connections: 100%`\n\nA hack állapota: 70%');
 constconnections = new Discord.MessageEmbed().setDescription("HACKED...\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 12%`\n\nA hack állapota: 72°%");
 constconnections2 = new Discord.MessageEmbed().setDescription('HACKED.\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 39%`\n\nA hack állapota: 75%');
-constconnections3 = new Discord.MessageEmbed().setDescription('HACKED..\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 51°%`\n\nA hack állapota: 78°%');
+constconnections3 = new Discord.MessageEmbed().setDescription('HACKED..\n`Cracking roblox account`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 51°%`\n\nA hack állapota: 78°%');
 constconnections4 = new Discord.MessageEmbed().setDescription('HACKED...\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 86%`\n\nA hack állapota: 79%');
 constconnections5 = new Discord.MessageEmbed().setDescription('HACKED.\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 100%`')
 const80 = new Discord.MessageEmbed().setDescription('HACKED..\n`Server connections: 100%`\n`Feldolgozás állapota: 100%, kész!`\n`Check connections: 100%`\n\nA hack állapota: 80%');
