@@ -8,7 +8,7 @@ bot.on("ready", async() => {
     let státuszok = [
         "Prefix: !",
         "Sub to BerryGod",
-        "Extreme Gamers a legjobb szerver!",
+        "Fidesz a legjobb szerver!",
         "Sub to BerryHUN",
         "This bot is so much fun"
     ]
