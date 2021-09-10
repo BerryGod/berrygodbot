@@ -122,8 +122,8 @@ bot.on("message", async message => {
     }
     
 
-   if(cmd == `<${@595257695389483045}>`) {
-        message.channel.send(`<${@595257695389483045}>`)
+   if(cmd == `<@${595257695389483045}>`) {
+        message.channel.send(`<@${595257695389483045}>`)
     }
 
     
