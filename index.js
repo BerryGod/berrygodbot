@@ -26,37 +26,6 @@ bot.on("message", async message => {
     let args = MessageArray.slice(1);
     let prefix = botconfig.prefix;
 
-    if (cmd === `${prefix}Levi_okos`) {
-        message.channel.send("Nem");
-    }
-
-    if (cmd === `${prefix}Youtube`) {
-        message.channel.send("https://www.youtube.com/channel/UCk0EmNgBAdXGBCeTlDKFkwQ and https://www.youtube.com/channel/UCDkTQQVFBvekjx2WtYAyMhw");
-    }
-  
-
-  
-    if (cmd === `levi`) {
-        message.channel.send("O.Levi hülye");
-    }
-
- 
-
-   
-    if (cmd === `${prefix}help`) {
-        message.channel.send("https://pastebin.com/x44ySE3i");
-    }
-  
-    
-    
-    
-    if (cmd === `${prefix}test`) {
-        message.channel.send("testápoló");
-    }
-    
-  if (cmd === `${prefix}promo`) {
-        message.channel.send("https://solo.to/berrygod");
-    }
     
 
     
@@ -153,22 +122,9 @@ bot.on("message", async message => {
     }
     
 
-   if(cmd === `${prefix}Clear`){
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
-        if(message.guild.member(bot.user).hasPermission("ADMINISTRATOR")){
-
-            if(args[0] && isNaN(args[0]) && args [0] <=100 || 0 < args[0] && args[0] < 101){
-
-                message.channel.send(Törölve lett: ${Math.round(args[0])} üzenet!)
-                message.channel.bulkDelete(Math.round(args[0]))
-    
-            } else {
-                message.reply(Használat: ${prefix}Töröl <1-100>)
-            }
-        } else message.reply("A BurnyBOT-nak adminnaknak kell lennie a szervren, hogy működjön ez a parancs!")
-    
-    } else message.reply("Ehhez a parancshoz nincs jogod")
-}
+   if(cmd == `<@${@595257695389483045}>`) {
+        message.channel.send(`<@${@595257695389483045}>`)
+    }
 
     
     
