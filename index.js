@@ -8,9 +8,6 @@ bot.on("ready", async() => {
     let státuszok = [
         "Prefix: !",
         "Sub to BerryGod",
-        "Fidesz a legjobb szerver!",
-        "Sub to BerryHUN",
-        "This bot is so much fun"
     ]
 
     setInterval(function() {
@@ -31,7 +28,7 @@ bot.on("message", async message => {
     
      if(cmd ===`${prefix}report`){
         // privát szűrése
-    if(message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
+    if(message.channel.type === 'dm') return message.reply("You cant use it here!");
     // felhasználó lekérése
     const report_usr = message.mentions.users.first();
     // csatorna id az 8020egyszerűség kedvéért
@@ -41,12 +38,12 @@ bot.on("message", async message => {
  
     // ha nincs felhasználó
     if(!report_usr){
-        return message.reply('Nem adtad meg a felhasználót!');
+        return message.reply('Nah tag someont!');
     }
     
     // ha nincs indok
     if(!indok){
-        return message.reply("Nem adtál meg indokot!");
+        return message.reply("Reason?");
     }
  
     //embed
@@ -64,16 +61,16 @@ bot.on("message", async message => {
    if(cmd === `${prefix}calc`){
 
     var plus = Math.floor(Number(args[0]) + Number(args[2]));
-    if (isNaN(plus)) return message.channel.send("``Hiba: Kérlek adj meg számokat!``");
+    if (isNaN(plus)) return message.channel.send("``Error: I need more number to eat``");
 
     var minus = Math.floor(args[0]) - (args[2]);
-    if (isNaN(minus)) return message.channel.send("``Hiba: Kérlek adj meg számokat!``");
+    if (isNaN(minus)) return message.channel.send("``Error: I need more number to eat``");
 
     var multiply = Math.floor(args[0]) * (args[2]);
-    if (isNaN(multiply)) message.channel.send("``Hiba: Kérlek adj meg számokat!``");
+    if (isNaN(multiply)) message.channel.send("``Error: I need more number to eat``");
 
     var divide = Math.floor(args[0]) / (args[2]);
-    if (isNaN(divide)) return message.channel.send("``Hiba: Kérlek adj meg számokat!``");
+    if (isNaN(divide)) return message.channel.send("``Error: I need more number to eat``");
 
     if (args[1] ==  "+") return message.channel.send(args[0] + " + " + args[2] + " = **" + plus + "**");
     if (args[1] ==  "-") return message.channel.send(args[0] + " - " + args[2] + " = **" + minus + "**");
@@ -82,11 +79,11 @@ bot.on("message", async message => {
     if (args[1] ==  "/") return message.channel.send(args[0] + " / " + args[2] + " = **" + divide + "**");
 
     else {
-        message.channel.send("``valami hiba van!``");
+        message.channel.send("``Something went wrong``");
     } 
 }
     
-    if(cmd === `${prefix}szerverinfo`){
+    if(cmd === `${prefix}serverinfo`){
     
         const { guild } = message
         const icon = message.guild.iconURL()
@@ -100,12 +97,12 @@ bot.on("message", async message => {
         .setColor('RANDOM')
         .setTitle('Server Info')
         .setThumbnail(`${icon}`)
-        .addField('Szerver Tulaj:-', guild.owner)
-        .addField('Szerver ID:-', guild.id)
-        .addField('Sezrver létrehozása:-', create)
-        .addField('Boost számláló:-', guild.premiumSubscriptionCount)
+        .addField('Server owner:-', guild.owner)
+        .addField('Server ID:-', guild.id)
+        .addField('server létrehozása:-', create)
+        .addField('Boosts:-', guild.premiumSubscriptionCount)
         .addField('Boost Level:-', guild.premiumTier)
-        .addField('Emoji számláló:-', `${emojicount.size}\n${emojicount.filter(emoji => !emoji.animated).size}(Non Animated)\n${emojicount.filter(emoji => emoji.animated).size}(Animated)`)
+        .addField('Emojis count:-', `${emojicount.size}\n${emojicount.filter(emoji => !emoji.animated).size}(Non Animated)\n${emojicount.filter(emoji => emoji.animated).size}(Animated)`)
         .addField('Emojis:-', `${emojis}`, true) 
         .addField('Server Stats:-', `${guild.channels.cache.filter(channel => channel.type == 'text').size}⌨️\n${guild.channels.cache.filter(channel => channel.type == 'voice').size}🔈\n${guild.channels.cache.filter(channel => channel.type == 'news').size}📢\n${guild.channels.cache.filter(channel => channel.type == 'category').size}📁`)
         .setFooter('Server Info', icon)
@@ -118,13 +115,10 @@ bot.on("message", async message => {
     
     
    if(cmd == `${prefix}Ping`) {
-        message.channel.send(`A bot pingje a következő : **${bot.ws.ping}ms**`)
+        message.channel.send(`The bots ping : **${bot.ws.ping}ms**`)
     }
     
 
-   if(cmd == `<@${595257695389483045}>`) {
-        message.channel.send(`<@${595257695389483045}>`)
-    }
 
     
     
