@@ -120,7 +120,7 @@ bot.on("message", async message => {
     }
     
     if(cmd === `${prefix}help`){
-       let helpEmbed = new DiscordAPIError.MessageEmbed()
+       let helpEmbed = new Discord.MessageEmbed()
        .setAuthor(message.author.username)
        .setTitle("Help")
        .addField("test")
