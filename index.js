@@ -119,15 +119,15 @@ bot.on("message", async message => {
         message.channel.send(`The bots ping : **${bot.ws.ping}ms**`)
     }
     
-if(cmd === `${prefix}help`){
-    let helpEmbed = new DiscordAPIError.MessageEmbed()
-    .setAuthor(message.author.username)
-    .setTitle("Help")
-    .addField("test")
-    .setThumbnail(message.author.displayAvatarURL())
-    .setImage(message.guild.iconURL)
+    if(cmd === `${prefix}help`){
+       let helpEmbed = new DiscordAPIError.MessageEmbed()
+       .setAuthor(message.author.username)
+       .setTitle("Help")
+       .addField("test")
+       .setThumbnail(message.author.displayAvatarURL())
+       .setImage(message.guild.iconURL)
 
-    message.channel.send(helpEmbed)
+       message.channel.send(helpEmbed)
 }
     
     
