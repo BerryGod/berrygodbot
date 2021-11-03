@@ -119,24 +119,17 @@ bot.on("message", async message => {
         message.channel.send(`The bots ping : **${bot.ws.ping}ms**`)
     }
     
+   if(cmd === `${prefix}help`) {
+     const help = new Discord.MessageEmbed()
+    .setTitle('Help')
+    .setDescription('Commands')
+    .addField('test')
+    .addField('test1')
+    .setTimestamp()
+    .setColor("RANDOM")
     
-    if(cmd === `${prefix}help`) {
-        const helpEmbed = new MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Help')
-	.setURL('https://discord.gg/BMnQxqwG8K')
-	.setAuthor('GamerHarcos bot by BerryGod')
-    	.setDescription('Commands: ')
-    	.setThumbnail('https://www.auditassistant.com/wp-content/uploads/2020/06/Help-640x263-1.jpeg')
-    	.addField('Hulp', 'kelp', true)
-        .addField('xd', 'xud', true)
-    	.setImage('https://i.imgur.com/AfFp7pu.png')
-    	.setTimestamp()
-    	.setFooter('https://i.imgur.com/AfFp7pu.png');
-    channel.send({ embeds: [helpEmbed] });
-    }    
-
-
+    	bot.channels.cache.get(channel_id).send(help)
+    }
     
     
 
