@@ -128,7 +128,7 @@ bot.on("message", async message => {
        .setImage(message.guild.iconURL)
 
        message.channel.send(helpEmbed)
-}
+    }
     
     
 
