@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const botconfig = require("./botconfig.json");
 const bot = new Discord.Client({ disableEveryone: true });
+const { MessageEmbed } = require('discord.js');
 
 bot.on("ready", async() => {
     console.log('${bot.user.username} A kurva anyád BerryGod!')
@@ -119,12 +120,12 @@ bot.on("message", async message => {
     }
     
     
-    if(cmd === `${prefix}help`
-        const exampleEmbed = new MessageEmbed()
-	    .setColor('#0099ff')
-	    .setTitle('Help')
-	    .setURL('https://discord.gg/BMnQxqwG8K')
-	    .setAuthor('GamerHarcos bot by BerryGod')
+    if(cmd === `${prefix}help`) {
+        const helpEmbed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Help')
+	.setURL('https://discord.gg/BMnQxqwG8K')
+	.setAuthor('GamerHarcos bot by BerryGod')
     	.setDescription('Commands: ')
     	.setThumbnail('https://www.auditassistant.com/wp-content/uploads/2020/06/Help-640x263-1.jpeg')
     	.addField('Hulp', 'kelp', true)
@@ -132,8 +133,7 @@ bot.on("message", async message => {
     	.setImage('https://i.imgur.com/AfFp7pu.png')
     	.setTimestamp()
     	.setFooter('Some footer text here', 'https://i.imgur.com/AfFp7pu.png');
-
-    channel.send({ embeds: [exampleEmbed] });
+    channel.send({ embeds: [helpEmbed] });
     }    
 
 
