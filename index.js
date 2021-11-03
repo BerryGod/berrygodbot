@@ -132,7 +132,7 @@ bot.on("message", async message => {
         .addField('xd', 'xud', true)
     	.setImage('https://i.imgur.com/AfFp7pu.png')
     	.setTimestamp()
-    	.setFooter('Some footer text here', 'https://i.imgur.com/AfFp7pu.png');
+    	.setFooter('https://i.imgur.com/AfFp7pu.png');
     channel.send({ embeds: [helpEmbed] });
     }    
 
