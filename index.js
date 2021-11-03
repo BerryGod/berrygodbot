@@ -119,7 +119,7 @@ bot.on("message", async message => {
         message.channel.send(`The bots ping : **${bot.ws.ping}ms**`)
     }
     
-    if(cmd === `${prefix}help`){
+    if(cmd === `-help`){
        let helpEmbed = new Discord.MessageEmbed()
        .setAuthor(message.author.username)
        .setTitle("Help")
